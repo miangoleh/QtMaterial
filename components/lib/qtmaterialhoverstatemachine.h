@@ -14,7 +14,7 @@ class QtMaterialHoverStateMachine : public QStateMachine
     Q_PROPERTY(qreal overlayOpacity WRITE setOverlayOpacity READ overlayOpacity)
 
 public:
-    explicit QtMaterialHoverStateMachine(QWidget *widget,Material::hoverActiveState state = Material::EnterLeave);
+    explicit QtMaterialHoverStateMachine(QWidget *widget,Material::hoverActiveState state = Material::EnterLeave,int animationDutation = 150);
     ~QtMaterialHoverStateMachine();
 
     void setOverlayOpacity(qreal opacity);
@@ -28,6 +28,8 @@ public:
 
     void setupProperties();
 
+    int getAnimationDuration() const;
+
 private:
     Q_DISABLE_COPY(QtMaterialHoverStateMachine)
 
@@ -39,6 +41,7 @@ private:
     QState               *const m_neutralState;
     qreal                       m_overlayOpacity;
     qreal                       m_baseOpacity;
+    int                         m_animationDuration;
 };
 
 inline qreal QtMaterialHoverStateMachine::overlayOpacity() const

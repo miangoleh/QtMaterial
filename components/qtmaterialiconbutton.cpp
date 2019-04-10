@@ -124,7 +124,7 @@ QColor QtMaterialIconButton::color() const
         case Material::Secondary:
             return QtMaterialStyle::instance().themeColor("secondary");
         case Material::Gray:
-            return Qt::gray;
+            return QtMaterialStyle::instance().themeColor("gray");
         case Material::Warning:
         case Material::Default:
         default:

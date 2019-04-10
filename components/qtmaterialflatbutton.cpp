@@ -68,7 +68,9 @@ void QtMaterialFlatButtonPrivate::init()
     rippleOverlay->setClipping(true);
 
     stateMachine->setupProperties();
-    stateMachine->startAnimations();
+//    if(haloVisible)
+//        stateMachine->startHaloAnimations();
+    stateMachine->start();
 }
 
 /*!
@@ -218,7 +220,7 @@ QColor QtMaterialFlatButton::backgroundColor() const
         case Material::Warning:
             return QtMaterialStyle::instance().themeColor("Warning");
         case Material::Gray:
-            return Qt::gray;
+            return QtMaterialStyle::instance().themeColor("gray");
         case Material::Default:
         default:
             return QtMaterialStyle::instance().themeColor("text");

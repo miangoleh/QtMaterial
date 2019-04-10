@@ -1,12 +1,13 @@
 #include "qtmaterialhoverstatemachine.h"
 
-QtMaterialHoverStateMachine::QtMaterialHoverStateMachine(QWidget *widget, Material::hoverActiveState state)
+QtMaterialHoverStateMachine::QtMaterialHoverStateMachine(QWidget *widget, Material::hoverActiveState state, int animationDutation)
     : QStateMachine (widget),
       b_widget(widget),
       m_hoveredState(new QState(ExclusiveStates)),
       m_neutralState(new QState(ExclusiveStates)),
       m_overlayOpacity(0),
-      m_baseOpacity(0.2)
+      m_baseOpacity(0.2),
+      m_animationDuration(animationDutation)
 {
     Q_ASSERT(widget);
 
@@ -27,7 +28,6 @@ QtMaterialHoverStateMachine::QtMaterialHoverStateMachine(QWidget *widget, Materi
         addTransition(b_widget, QEvent::Hide, m_hoveredState, m_neutralState);
     }
 }
-
 QtMaterialHoverStateMachine::~QtMaterialHoverStateMachine()
 {
 
@@ -36,13 +36,13 @@ QtMaterialHoverStateMachine::~QtMaterialHoverStateMachine()
 void QtMaterialHoverStateMachine::setOverlayOpacity(qreal opacity)
 {
     m_overlayOpacity = opacity;
-    setupProperties();
+    b_widget->update();
 }
 
 void QtMaterialHoverStateMachine::setBaseOpacity(const qreal baseopacity)
 {
     m_baseOpacity = baseopacity;
-    b_widget->update();
+    setupProperties();
 }
 
 qreal QtMaterialHoverStateMachine::baseOpacity() const
@@ -77,7 +77,7 @@ void QtMaterialHoverStateMachine::addTransition(QAbstractTransition *transition,
     QPropertyAnimation *animation;
 
     animation = new QPropertyAnimation(this, "overlayOpacity", this);
-    animation->setDuration(150);
+    animation->setDuration(m_animationDuration);
     transition->addAnimation(animation);
 
     fromState->addTransition(transition);

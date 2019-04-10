@@ -36,7 +36,7 @@ public:
     void setHaloScaleFactor(qreal factor);
     inline qreal haloScaleFactor() const;
 
-    void startAnimations();
+    void startHaloAnimations();
     void setupProperties();
     void updateCheckedStatus();
 
