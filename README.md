@@ -1,8 +1,6 @@
-# QtMaterial
 
-Added extra funtionalities such as "Sizings" for IconButtons, CheckButtons, RadioButtons, ToggleButton and more theme funtionalities and improved hover features for icons.
 
-Fixing IconButton's Click issue and some Ui/Ux improvements.
+Added extra funtionalities for IconButtons, CheckButtons, RadioButtons, ToggleButton and more theme funtionalities and improved hover features for icons and some Ui/Ux improvements.
 
 Details : 
 
@@ -13,3 +11,4 @@ Details :
 - Implemented a new Class nemed hoverStateMachine that you can use in any other class to perform animations on Enter/Leave or show/hide events.
 - Implemented setContentMargin for FlatButton
 - Adding some extra theme Role enums.
+- Fixing IconButton's Click issue.
