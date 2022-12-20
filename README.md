@@ -1,17 +1,15 @@
 # QtMaterial
-Qt Materials Based on Material Design standards  | Developed based on " https://github.com/laserpants/qt-material-widgets " works
 
-I added more funtionalities like Sizings for IconButtons | CheckButtons | RadioButtons | ToggleButton and more theme funtionalities
-and better hover for icons.
+Added extra funtionalities such as "Sizings" for IconButtons, CheckButtons, RadioButtons, ToggleButton and more theme funtionalities and improved hover features for icons.
 
-fixing some issues with IconButton Click and some Ui/Ux improvements
+Fixing IconButton's Click issue and some Ui/Ux improvements.
 
 Details : 
 
-+SetIconSize in IconButton / ToggleButton / CheckBox / RadioButton
-+RTL language support for RadioButton and CheckBox
-+you can set BgColor for IconButton
-+you can enable hover for IconButton
-+i create a new Class nemed hoverStateMachine that you can use in any other class to perform animations on Enter/Leave or show/hide events
-+setContentMargin for FlatButton
-+some extra theme Role enums.
+- SetIconSize implemented for IconButton, ToggleButton, CheckBox and RadioButton.
+- RTL language support for RadioButton and CheckBox
+- Implemented a fuction to set BgColor for IconButton.
+- IconButton with hover option. 
+- Implemented a new Class nemed hoverStateMachine that you can use in any other class to perform animations on Enter/Leave or show/hide events.
+- Implemented setContentMargin for FlatButton
+- Adding some extra theme Role enums.
